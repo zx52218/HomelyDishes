@@ -1,0 +1,23 @@
+{
+  "name": "暖屋食光 · 用餐记录",
+  "short_name": "暖屋食光",
+  "description": "家庭点菜 · 天选一菜转盘 · 用餐历史记录",
+  "id": "warm-house-food",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf9f3",
+  "theme_color": "#f5a962",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "开始点菜", "url": "./index.html?tab=order", "description": "直接进入点菜" },
+    { "name": "查看历史", "url": "./index.html?tab=hist", "description": "近 3 天用餐记录" }
+  ]
+}
