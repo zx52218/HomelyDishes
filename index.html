@@ -104,23 +104,13 @@
     box-shadow:0 4px 10px rgba(238,145,73,.3)}
   .tabs button:active{transform:scale(.96)}
   .dish{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:20px;
-    padding:14px 16px;display:flex;flex-direction:column;gap:7px;
+    padding:14px 16px;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;
     box-shadow:var(--sh);position:relative;z-index:1;
     transition:transform .22s cubic-bezier(.2,.7,.3,1);touch-action:pan-y;will-change:transform;
     border:1px solid rgba(255,255,255,.8)}
-  .del-wrap{position:relative;margin-bottom:12px}
-  .dish.open{transform:translateX(-86px)}
-  .del-back{position:absolute;top:0;right:0;bottom:0;width:86px;border-radius:0 20px 20px 0;
-    background:linear-gradient(180deg,#f2797a,#e5534f);color:#fff;font-size:14px;font-weight:700;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
-  .del-back b{font-size:20px;line-height:1}
   .dish .r1{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .dish .nm{font-size:16px;font-weight:700}
   .dish .tags{display:flex;gap:6px;flex-wrap:wrap;font-size:11px}
-  .dish .hint{font-size:10px;color:var(--sub);align-self:flex-end;opacity:.55;
-    display:flex;align-items:center;gap:3px}
-  .dish.open .hint{opacity:0;transition:opacity .15s}
   .dish .tags i{font-style:normal;padding:4px 9px;border-radius:9px}
   .t-cat{background:var(--primary-l);color:var(--primary-d);font-weight:600}
   .t-sp{background:var(--accent-l);color:var(--accent)}
@@ -615,14 +605,13 @@ const UI = {
       const steps=(d.steps||[]);
       const stepsHtml = steps.length ? '<div class="steps">'+steps.map((s,i)=>
         '<div class="step"><b>'+(i+1)+'.</b><span>'+esc(s)+'</span></div>').join('')+'</div>' : '';
-      return '<div class="del-wrap"><div class="del-back" onclick="UI.delDish(\''+d.id+'\')"><b>🗑</b>删除</div>'+
-        '<div class="dish" data-id="'+d.id+'"><div class="r1"><span class="nm">'+esc(d.name)+'</span>'+
+      return '<div class="dish" data-id="'+d.id+'"><div class="r1"><span class="nm">'+esc(d.name)+'</span>'+
         '<div class="ops">'+
-        '<button class="edit" onclick="UI.openForm(\''+d.id+'\')">编辑</button></div></div>'+
+        '<button class="edit" onclick="UI.openForm(\''+d.id+'\')">编辑</button>'+
+        '<button class="del" onclick="UI.delDish(\''+d.id+'\')">删除</button></div></div>'+
         '<div class="tags">'+tags+'</div>'+
         stepsHtml+
-        '<div class="hint">👈 左滑可删除</div>'+
-        '</div></div>';
+        '</div>';
     }).join('') : '<div class="empty">😋 暂无匹配菜品<br>试试换关键词，或新增一个菜吧</div>';
   },
   delDish(id){
@@ -631,48 +620,6 @@ const UI = {
     Data.menu=Data.menu.filter(x=>x.id!==id);
     Data.saveMenu(); this.renderDishes(); this.renderCart(); this.buildWheel();
     this.toast('已删除「'+d.name+'」');
-  },
-
-  /* --- 左滑删除：触摸手势绑定（仅在菜单板块生效） --- */
-  bindSwipe(){
-    const box=this.$('dishList');
-    if(!box || box.dataset.swBound) return; box.dataset.swBound='1';
-    const OPEN=86;
-    let row=null, startX=0, dx=0, dragging=false;
-    function closeAll(){
-      box.querySelectorAll('.dish.open').forEach(r=>r.classList.remove('open'));
-    }
-    box.addEventListener('touchstart',e=>{
-      const d=e.target.closest('.dish'); if(!d){ closeAll(); return; }
-      if(e.target.closest('button')) return;   // 按钮不触发滑动
-      row=d; startX=e.touches[0].clientX; dx=0; dragging=false;
-    },{passive:true});
-    box.addEventListener('touchmove',e=>{
-      if(!row) return;
-      const x=e.touches[0].clientX-startX;
-      if(!dragging && Math.abs(x)>6) dragging=true;   // 6px 判定为滑动
-      if(dragging){
-        dx=Math.max(-OPEN,Math.min(OPEN,x));         // 限制在 [-OPEN,OPEN]
-        row.style.transition='none';
-        row.style.transform='translateX('+dx+'px)';
-        e.preventDefault();
-      }
-    },{passive:false});
-    const end=()=>{
-      if(!row) return;
-      const wasOpen=row.classList.contains('open');
-      const open = dx<=-OPEN/2 || (wasOpen && dx<-10);
-      row.classList.toggle('open',open);
-      row.style.transition=''; row.style.transform='';
-      if(wasOpen && !open) row.classList.remove('open');
-      row=null; dx=0;
-    };
-    box.addEventListener('touchend',end,{passive:true});
-    box.addEventListener('touchcancel',end,{passive:true});
-    box.addEventListener('click',e=>{
-      if(e.target.closest('.del-back')) return;   // 点删除按钮不关闭（交给 delDish）
-      if(!e.target.closest('.dish')) closeAll();
-    });
   },
 
   /* --- 3.31 菜单库导出 / 导入（数据迁移） --- */
@@ -1115,7 +1062,6 @@ const UI = {
     this.initTabs();
     this.renderChips();
     this.renderDishes();
-    this.bindSwipe();
     this.buildWheel();
     this.renderMeal();
     this.renderPick();
