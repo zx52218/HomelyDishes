@@ -38,78 +38,95 @@
 /* ============ 顶部（渐变柔光 Header） ============ */
   .top{position:sticky;top:0;z-index:30;overflow:hidden;
     background:linear-gradient(135deg,#f8b26e 0%,#f5a962 40%,#ec9346 78%,#e8884a 100%);color:#fff;
-    padding:20px 20px 26px;box-shadow:0 8px 24px rgba(232,136,74,.28);
-    border-radius:0 0 26px 26px}
+    padding:14px 16px 18px;box-shadow:0 8px 24px rgba(232,136,74,.28);
+    border-radius:0 0 22px 22px}
   .top::before{content:'';position:absolute;right:-40px;top:-56px;width:190px;height:190px;border-radius:50%;
     background:radial-gradient(circle,rgba(255,235,210,.55),rgba(255,235,210,0) 70%);
     filter:blur(6px);pointer-events:none}
   .top::after{content:'';position:absolute;left:-50px;bottom:-70px;width:200px;height:120px;border-radius:50%;
     background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);pointer-events:none}
-  .top h1{font-size:22px;font-weight:700;display:flex;align-items:center;gap:8px;position:relative;z-index:1;
+  .top h1{font-size:19px;font-weight:700;display:flex;align-items:center;gap:8px;position:relative;z-index:1;
     text-shadow:0 1px 6px rgba(170,90,30,.18);letter-spacing:.02em}
-  .top .sub{font-size:13px;opacity:.97;margin-top:8px;display:flex;
+  .top .sub{font-size:12px;opacity:.97;margin-top:6px;display:flex;
     flex-wrap:nowrap;align-items:center;justify-content:space-between;
     gap:6px;line-height:1.5;position:relative;z-index:1}
   .top .sub .tag{background:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.35);
-    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:10px;padding:3px 12px 3px 6px;font-weight:600;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:10px;padding:2px 10px 2px 5px;font-weight:600;
     cursor:pointer;transition:background .22s ease;user-select:none;white-space:nowrap;flex-shrink:0;
     display:inline-flex;align-items:center;gap:4px;box-shadow:0 2px 8px rgba(200,110,40,.12)}
   .top .sub .tag i{font-style:normal;background:rgba(255,255,255,.30);border-radius:8px;
-    width:23px;height:23px;display:flex;align-items:center;justify-content:center;font-size:13px}
+    width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:12px}
   .top .sub .tag:active{transform:scale(.94);background:rgba(255,255,255,.42)}
   .top .sub .tags-r{display:inline-flex;gap:6px;flex-shrink:0}
 
   /* ============ 顶部导航（毛玻璃悬浮卡片） ============ */
   .tabs{position:sticky;top:0;z-index:29;display:grid;grid-template-columns:repeat(3,1fr);
     background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
-    margin:14px 12px;border-radius:18px;padding:6px;
+    margin:10px 10px;border-radius:16px;padding:5px;
     box-shadow:var(--sh),0 1px 0 rgba(255,255,255,.9) inset;border:1px solid rgba(255,255,255,.7)}
-  .tabs button{padding:12px 0;font-size:15px;font-weight:600;color:var(--sub);
-    border-radius:13px;transition:all .22s cubic-bezier(.2,.7,.3,1)}
+  .tabs button{padding:9px 0;font-size:14px;font-weight:600;color:var(--sub);
+    border-radius:11px;transition:all .22s cubic-bezier(.2,.7,.3,1)}
   .tabs button.on{background:#fff;color:var(--primary-d);
     box-shadow:0 3px 10px rgba(139,92,42,.10),0 1px 0 rgba(255,255,255,.8) inset;font-weight:700}
   .tabs button:active{transform:scale(.96)}
-  main{max-width:640px;margin:0 auto;padding:4px 12px}
+  main{max-width:640px;margin:0 auto;padding:4px 10px}
   .panel{display:none}
   .panel.show{display:block;animation:up .28s ease}
   @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .sec{font-size:13px;font-weight:600;color:var(--sub);margin:16px 2px 8px;display:flex;
+  .sec{font-size:12px;font-weight:600;color:var(--sub);margin:12px 2px 6px;display:flex;
     justify-content:space-between;align-items:center}
   .sec b{color:var(--primary)}
 
   /* ============ 模块1：菜单库 ============ */
-  .menu-bar{display:flex;gap:10px;margin:4px 0}
+  .menu-bar{display:flex;gap:8px;margin:4px 0}
   .menu-bar .search{flex:1;display:flex;align-items:center;gap:8px;background:var(--card);
-    border:1.5px solid var(--stroke);border-radius:16px;padding:0 14px;
+    border:1.5px solid var(--stroke);border-radius:14px;padding:0 12px;
     box-shadow:var(--sh-sm);transition:box-shadow .22s ease,border-color .22s ease}
   .menu-bar .search:focus-within{border-color:var(--primary);
     box-shadow:0 0 0 4px rgba(245,169,98,.16),var(--sh-sm)}
-  .menu-bar .search input{flex:1;border:none;outline:none;background:none;height:44px;color:var(--ink)}
+  .menu-bar .search input{flex:1;border:none;outline:none;background:none;height:40px;color:var(--ink)}
   .menu-bar .search input::placeholder{color:var(--sub)}
-  .menu-bar .add{border:none;background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;border-radius:16px;
-    width:88px;font-size:15px;font-weight:600;flex-shrink:0;box-shadow:0 4px 12px rgba(238,145,73,.35);
+  .menu-bar .add{border:none;background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;border-radius:14px;
+    width:78px;font-size:14px;font-weight:600;flex-shrink:0;box-shadow:0 4px 12px rgba(238,145,73,.35);
     transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
   .menu-bar .add:active{transform:scale(.95);box-shadow:0 2px 6px rgba(238,145,73,.3)}
+  .menu-bar .search .sbtn{border:none;background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;
+    border-radius:10px;padding:6px 10px;font-size:12px;font-weight:600;flex-shrink:0;margin-left:2px;
+    box-shadow:0 2px 6px rgba(238,145,73,.3);transition:transform .18s ease,box-shadow .18s ease}
+  .menu-bar .search .sbtn:active{transform:scale(.94)}
+  .hidden{display:none!important}
   .tools{display:flex;gap:10px;margin:8px 0 0}
   .tools .tl{flex:1;border:1.5px solid var(--stroke);background:var(--card);color:var(--primary-d);
-    font-size:13px;font-weight:600;border-radius:14px;padding:10px 0;box-shadow:var(--sh-sm);
+    font-size:12px;font-weight:600;border-radius:12px;padding:9px 0;box-shadow:var(--sh-sm);
     transition:transform .22s ease,background .22s ease}
   .tools .tl:active{transform:scale(.96);background:var(--primary-l)}
+  .tools .tl.add-tl{background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;border-color:transparent;
+    box-shadow:0 4px 10px rgba(238,145,73,.3)}
+  .tools .tl.add-tl:active{background:linear-gradient(135deg,#f5a962,#ee9149);filter:brightness(.96)}
   .chips{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 6px;margin-bottom:6px;-webkit-overflow-scrolling:touch}
   .chips::-webkit-scrollbar{display:none}
-  .chips button{flex-shrink:0;font-size:13px;color:var(--sub);background:var(--chips);
-    padding:8px 16px;border-radius:22px;transition:all .22s cubic-bezier(.2,.7,.3,1)}
+  .chips button{flex-shrink:0;font-size:12px;color:var(--sub);background:var(--chips);
+    padding:7px 14px;border-radius:20px;transition:all .22s cubic-bezier(.2,.7,.3,1)}
   .chips button:active{transform:scale(.92)}
   .chips button.on{background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;
     box-shadow:0 4px 10px rgba(238,145,73,.3)}
   .tabs button:active{transform:scale(.96)}
-  .dish{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:20px;
-    padding:14px 16px;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;
+  .dish{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:18px;
+    padding:12px 14px;display:flex;flex-direction:column;gap:6px;margin-bottom:10px;
+    height:158px;overflow:hidden;cursor:pointer;
     box-shadow:var(--sh);position:relative;z-index:1;
     transition:transform .22s cubic-bezier(.2,.7,.3,1);touch-action:pan-y;will-change:transform;
     border:1px solid rgba(255,255,255,.8)}
+  .dish:active{transform:scale(.98)}
+  .dish>*{position:relative;z-index:1}
+  .dish>.dish-bg{position:absolute;right:10px;bottom:10px;z-index:0;width:84px;height:84px;
+    object-fit:cover;border-radius:14px;opacity:.22;pointer-events:none;user-select:none;
+    box-shadow:0 2px 8px rgba(139,92,42,.18)}
+  .dish>img.dish-bg{opacity:.22}
+  .dish>span.dish-bg{display:flex;align-items:center;justify-content:center;width:auto;height:auto;
+    font-size:60px;line-height:1;opacity:.22;box-shadow:none}
   .dish .r1{display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .dish .nm{font-size:16px;font-weight:700}
+  .dish .nm{font-size:15px;font-weight:700}
   .dish .tags{display:flex;gap:6px;flex-wrap:wrap;font-size:11px}
   .dish .tags i{font-style:normal;padding:4px 9px;border-radius:9px}
   .t-cat{background:var(--primary-l);color:var(--primary-d);font-weight:600}
@@ -117,12 +134,32 @@
   .t-al{background:var(--red-l);color:var(--red)}
   .dish .note{font-size:12px;color:var(--sub);line-height:1.5}
   .dish .ops{display:flex;gap:10px;align-self:flex-end}
-  .dish .ops button{font-size:13px;padding:6px 13px;border-radius:10px;font-weight:600;
+  .dish .ops button{font-size:12px;padding:5px 11px;border-radius:10px;font-weight:600;
     transition:transform .22s ease}
   .dish .ops .edit{background:var(--primary-l);color:var(--primary-d)}
   .dish .ops .del{background:var(--red-l);color:var(--red)}
   .dish .ops button:active{transform:scale(.94)}
-  .empty{text-align:center;color:var(--sub);font-size:13px;padding:48px 0;line-height:1.8}
+  .empty{text-align:center;color:var(--sub);font-size:13px;padding:40px 0;line-height:1.8}
+
+  /* ============ 菜品详情弹窗 ============ */
+  .d-pic{width:100%;height:160px;border-radius:16px;overflow:hidden;margin-bottom:12px;
+    background:linear-gradient(160deg,#fff,#fffaf3);display:flex;align-items:center;justify-content:center}
+  .d-pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .d-pic .d-emoji{font-size:64px}
+  .d-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+  .d-tags i{font-style:normal;padding:4px 10px;border-radius:9px;font-size:12px}
+  .d-sec{font-size:13px;font-weight:700;color:var(--primary-d);margin:12px 0 5px}
+  .d-ing{font-size:13px;color:var(--ink);line-height:1.7;word-break:break-all}
+  #dBody .step{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink);line-height:1.7;margin-bottom:8px}
+  #dBody .step b{flex-shrink:0;width:22px;height:22px;border-radius:8px;background:var(--primary-l);color:var(--primary-d);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px}
+  #dBody .step span{word-break:break-all}
+  .d-ops{display:flex;gap:10px;margin-top:18px}
+  .d-ops button{flex:1;padding:11px 0;border-radius:13px;font-weight:600;font-size:14px;
+    transition:transform .22s ease,filter .22s ease}
+  .d-ops .d-edit{background:var(--primary-l);color:var(--primary-d)}
+  .d-ops .d-del{background:var(--red-l);color:var(--red)}
+  .d-ops button:active{transform:scale(.96);filter:brightness(.95)}
 
   /* ============ 弹窗（表单） ============ */
   .mask{position:fixed;inset:0;background:rgba(61,52,43,.42);
@@ -147,6 +184,7 @@
     box-shadow:0 0 0 4px rgba(245,169,98,.16)}
   .field textarea{resize:vertical;min-height:52px}
   .dish .note{font-size:12px;color:var(--sub);line-height:1.5}
+  .dish .ing{font-size:12px;color:var(--sub);line-height:1.6;margin-top:5px;word-break:break-all}
   .dish .steps{margin-top:6px}
   .dish .step{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--ink);line-height:1.6}
   .dish .step b{flex-shrink:0;color:var(--primary-d);font-weight:700;min-width:18px}
@@ -177,16 +215,16 @@
   .sheet .save:active{transform:scale(.97);box-shadow:0 3px 8px rgba(238,145,73,.3)}
 
   /* ============ 转盘点菜（天选一菜） ============ */
-  .wheel-sec{background:linear-gradient(165deg,#fff,#fffaf2);border-radius:24px;
-    padding:16px 16px 18px;margin-bottom:16px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
+  .wheel-sec{background:linear-gradient(165deg,#fff,#fffaf2);border-radius:22px;
+    padding:14px 14px 16px;margin-bottom:14px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
   .wheel-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .wheel-h .t{font-size:16px;font-weight:700}
+  .wheel-h .t{font-size:15px;font-weight:700}
   .wheel-h .t small{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:3px}
   .wheel-h button{border:1.5px solid var(--stroke);background:#fff;color:var(--primary-d);
-    font-size:13px;font-weight:600;padding:8px 16px;border-radius:13px;box-shadow:var(--sh-sm);
+    font-size:12px;font-weight:600;padding:7px 14px;border-radius:12px;box-shadow:var(--sh-sm);
     transition:transform .22s ease,background .22s ease}
   .wheel-h button:active{transform:scale(.94);background:var(--primary-l)}
-  .wheel-wrap{position:relative;width:min(74vw,290px);margin:2px auto;aspect-ratio:1}
+  .wheel-wrap{position:relative;width:min(72vw,260px);margin:2px auto;aspect-ratio:1}
   .wheel{position:absolute;inset:0;border-radius:50%;overflow:hidden;
     box-shadow:0 10px 30px rgba(139,92,42,.22),inset 0 0 0 6px #fff,inset 0 0 0 11px rgba(245,169,98,.85);
     transition:transform 4.2s cubic-bezier(.15,.6,.2,1)}
@@ -197,14 +235,14 @@
     overflow:hidden;text-overflow:ellipsis;line-height:1}
   .wheel .wseg i{font-style:normal}
   .pin{position:absolute;left:50%;top:-10px;transform:translateX(-50%);
-    font-size:30px;color:var(--accent);z-index:2;
+    font-size:26px;color:var(--accent);z-index:2;
     filter:drop-shadow(0 3px 4px rgba(229,83,79,.45))}
   .wbtn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
-    width:80px;height:80px;border-radius:50%;
+    width:72px;height:72px;border-radius:50%;
     background:linear-gradient(135deg,#f8b877,#ef8a44 60%,#ee9149);
     border:none;color:#fff;
     box-shadow:0 6px 18px rgba(238,145,73,.4),inset 0 2px 6px rgba(255,255,255,.35);
-    font-size:40px;line-height:1;font-weight:700;letter-spacing:.02em;
+    font-size:34px;line-height:1;font-weight:700;letter-spacing:.02em;
     display:flex;align-items:center;justify-content:center;
     transition:transform .22s cubic-bezier(.2,.7,.3,1);
     cursor:pointer;animation:wbtnPulse 2.6s ease-in-out infinite}
@@ -240,25 +278,25 @@
   .wheel-out .act .again{border:1.5px solid var(--stroke);background:#fff;color:var(--sub);box-shadow:var(--sh-sm)}
 
   /* ============ 模块2：点菜 ============ */
-  .meal{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:4px 0}
-  .meal button{padding:12px 0;font-size:14px;font-weight:600;color:var(--sub);background:var(--card);
-    border:1.5px solid var(--stroke);border-radius:16px;transition:all .22s cubic-bezier(.2,.7,.3,1);position:relative;overflow:hidden;
+  .meal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:4px 0}
+  .meal button{padding:10px 0;font-size:13px;font-weight:600;color:var(--sub);background:var(--card);
+    border:1.5px solid var(--stroke);border-radius:14px;transition:all .22s cubic-bezier(.2,.7,.3,1);position:relative;overflow:hidden;
     box-shadow:var(--sh-sm)}
   .meal button:active{transform:scale(.94)}
-  .meal button .ic{display:block;font-size:19px;margin-bottom:3px}
+  .meal button .ic{display:block;font-size:17px;margin-bottom:3px}
   .meal button.on{background:linear-gradient(135deg,#f2797a,#ef6a64);border-color:transparent;color:#fff;
     box-shadow:0 4px 12px rgba(242,121,122,.35)}
-  .pick-list .row{display:flex;align-items:center;gap:11px;background:linear-gradient(165deg,#fff,#fffaf3);
-    border:1.5px solid var(--stroke);border-radius:16px;padding:11px 13px;margin-bottom:9px;
+  .pick-list .row{display:flex;align-items:center;gap:10px;background:linear-gradient(165deg,#fff,#fffaf3);
+    border:1.5px solid var(--stroke);border-radius:14px;padding:10px 12px;margin-bottom:8px;
     box-shadow:var(--sh-sm);
     transition:transform .16s cubic-bezier(.2,.7,.3,1),border-color .22s ease,box-shadow .22s ease}
   .pick-list .row:active{transform:scale(.98)}
   .pick-list .row.on{border-color:#f5b98a;box-shadow:0 3px 12px rgba(238,145,73,.16)}
-  .row .cb{width:23px;height:23px;flex-shrink:0;border-radius:8px;border:2px solid #e9dcC9;
+  .row .cb{width:21px;height:21px;flex-shrink:0;border-radius:8px;border:2px solid #e9dcC9;
     display:flex;align-items:center;justify-content:center;color:transparent;font-size:14px;transition:all .22s ease}
   .row.on .cb{background:linear-gradient(135deg,#f5a962,#ee9149);border-color:transparent;color:#fff;
     box-shadow:0 2px 6px rgba(238,145,73,.3)}
-  .row .nm{flex:1;font-size:15px;font-weight:600;min-width:0}
+  .row .nm{flex:1;font-size:14px;font-weight:600;min-width:0}
   .row .nm small{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:2px}
   .row .qty{display:none;align-items:center;gap:8px}
   .row.on .qty{display:flex}
@@ -272,8 +310,8 @@
   .pick-list .pk-cat:first-child{margin-top:2px}
 
   /* 待点菜单汇总 */
-  .cart{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:22px;
-    padding:16px;margin-top:18px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
+  .cart{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:20px;
+    padding:14px;margin-top:14px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
   .cart .h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
   .cart .h span{font-size:16px;font-weight:700}
   .cart .clear{font-size:13px;color:var(--sub);padding:6px 12px;border-radius:10px;background:var(--chips);
@@ -293,13 +331,13 @@
 
   /* ============ 模块3：历史 ============ */
   .hist-head{display:flex;gap:8px;margin:4px 0 12px}
-  .hist-head button{flex:1;font-size:13px;font-weight:600;color:var(--primary-d);background:var(--card);
-    border:1.5px solid var(--stroke);border-radius:14px;padding:10px 0;box-shadow:var(--sh-sm);
+  .hist-head button{flex:1;font-size:12px;font-weight:600;color:var(--primary-d);background:var(--card);
+    border:1.5px solid var(--stroke);border-radius:12px;padding:9px 0;box-shadow:var(--sh-sm);
     transition:transform .22s ease,background .22s ease}
   .hist-head button:active{transform:scale(.96);background:var(--primary-l)}
   .hist-head button.danger{color:var(--red);background:var(--red-l);border-color:transparent}
-  .day{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:22px;
-    padding:15px;margin-bottom:14px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
+  .day{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:20px;
+    padding:13px;margin-bottom:12px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
   .day .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
   .day .dh .dt{font-size:16px;font-weight:700}
   .day .dh .dt small{font-size:11px;color:var(--sub);font-weight:400;margin-left:6px}
@@ -344,11 +382,13 @@
   .rank .ct{font-size:14px;color:var(--primary);font-weight:700}
 
   /* ============ 底部下单按钮 ============ */
-  .bar{position:fixed;left:50%;transform:translateX(-50%);bottom:0;z-index:28;
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:28;margin:0 auto;
     width:100%;max-width:640px;padding:14px 16px calc(18px + env(safe-area-inset-bottom));
-    background:linear-gradient(transparent,var(--bg) 34%)}
-  .bar button{width:100%;background:linear-gradient(135deg,#f5a962,#ef8a44 60%,#ee9149);color:#fff;font-size:17px;font-weight:700;
-    padding:15px;border-radius:18px;box-shadow:0 8px 24px rgba(238,145,73,.4),0 2px 6px rgba(238,145,73,.3);
+    background:linear-gradient(transparent,var(--bg) 34%);
+    transform:translate3d(0,0,0);-webkit-transform:translate3d(0,0,0);
+    will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  .bar button{width:100%;background:linear-gradient(135deg,#f5a962,#ef8a44 60%,#ee9149);color:#fff;font-size:16px;font-weight:700;
+    padding:13px;border-radius:16px;box-shadow:0 8px 24px rgba(238,145,73,.4),0 2px 6px rgba(238,145,73,.3);
     transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease}
   .bar button:active{transform:scale(.97)}
   .bar button:active:not(:disabled){filter:brightness(.97)}
@@ -363,6 +403,47 @@
   #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
   /* 大屏横排时限制栏宽 */
+  /* ============ 灵感菜谱 ============ */
+  .rec-sec{background:linear-gradient(165deg,#fff,#fffaf3);border-radius:20px;
+    padding:14px;margin-top:14px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.8)}
+  .rec-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .rec-h .t{font-size:15px;font-weight:700}
+  .rec-h .t small{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:3px}
+  .rec-bar{display:flex;gap:9px}
+  .rec-search{flex:1;display:flex;align-items:center;background:var(--bg);
+    border:1.5px solid var(--stroke);border-radius:14px;padding:0 13px;
+    transition:box-shadow .22s ease,border-color .22s ease}
+  .rec-search:focus-within{border-color:var(--primary);box-shadow:0 0 0 4px rgba(245,169,98,.16)}
+  .rec-search input{flex:1;border:none;outline:none;background:none;height:42px;color:var(--ink);font-size:15px}
+  .rec-search input::placeholder{color:var(--sub)}
+  .rec-btn{border:none;background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;border-radius:14px;
+    width:78px;font-size:15px;font-weight:600;flex-shrink:0;box-shadow:0 4px 12px rgba(238,145,73,.35);
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+  .rec-btn:active{transform:scale(.94);box-shadow:0 2px 6px rgba(238,145,73,.3)}
+  .rec-list{margin-top:12px}
+  .rec-status{font-size:13px;color:var(--sub);text-align:center;padding:16px 0;line-height:1.7}
+  .rec-item{background:var(--card);border:1.5px solid var(--stroke);border-radius:14px;padding:11px 12px;margin-bottom:8px;
+    box-shadow:var(--sh-sm);transition:transform .16s cubic-bezier(.2,.7,.3,1),border-color .22s ease}
+  .rec-item:active{transform:scale(.98)}
+  .rec-item.on{border-color:#f5b98a}
+  .rec-item .rh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .rec-item .nm{font-size:15px;font-weight:700;min-width:0}
+  .rec-item .type{font-size:11px;color:var(--primary-d);background:var(--primary-l);border-radius:8px;padding:3px 8px;flex-shrink:0;font-weight:600}
+  .rec-item .det{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--stroke)}
+  .rec-item.on .det{display:block;animation:up .24s cubic-bezier(.2,.7,.3,1)}
+  .rec-det-h{font-size:12px;color:var(--primary-d);font-weight:700;margin:8px 0 4px}
+  .rec-item .rl{font-size:12px;color:var(--ink);line-height:1.7}
+  .rec-item .step{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink);line-height:1.7;margin-bottom:7px}
+  .rec-item .step b{flex-shrink:0;width:22px;height:22px;border-radius:8px;background:var(--primary-l);color:var(--primary-d);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px}
+  .rec-item .step span{word-break:break-all}
+  .rec-item .tip{font-size:11px;color:var(--sub);line-height:1.6;background:var(--chips);border-radius:10px;padding:8px 10px}
+  .rec-add{width:100%;margin-top:12px;border:none;background:linear-gradient(135deg,#f5a962,#ee9149);color:#fff;
+    font-size:13px;font-weight:700;padding:10px 0;border-radius:12px;
+    box-shadow:0 4px 10px rgba(238,145,73,.32);
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+  .rec-add:active{transform:scale(.97);box-shadow:0 2px 6px rgba(238,145,73,.25)}
+
   @media(min-width:560px){main,.tabs,.bar{max-width:560px}}
 </style>
 </head>
@@ -385,16 +466,30 @@
   <!-- ======================= 板块1：菜单库 ======================= -->
   <section class="panel show" id="p-menu">
     <div class="menu-bar">
-      <div class="search"><span>🔍</span><input id="kw" placeholder="搜索菜名 / 做法 / 备注" oninput="UI.refreshMenu()"></div>
-      <button class="add" onclick="UI.openForm()">＋ 新增</button>
+      <div class="search"><span>🔍</span><input id="kw" placeholder="搜索菜名 / 做法 / 原料，回车连同在线菜谱一起搜"
+        oninput="UI.refreshMenu()" onkeydown="if(event.key==='Enter')UI.searchRecipe()">
+        <button class="sbtn" onclick="UI.searchRecipe()">搜索</button>
+      </div>
     </div>
-    <div class="tools">
+    <div class="tools" id="tools">
+      <button class="tl add-tl" onclick="UI.openForm()">＋ 新增</button>
       <button class="tl" onclick="UI.exportMenu()">⬇ 导出菜单</button>
       <button class="tl" onclick="UI.importMenu()">⬆ 导入菜单</button>
     </div>
     <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="UI.handleImport(this)">
+
     <div class="chips" id="catChips"><!-- 分类筛选动态生成 --></div>
     <div id="dishList"></div>
+
+    <!-- 在线菜谱结果（天行数据 API）：与本地搜索混排展示，共用同一个搜索框 -->
+    <div class="rec-sec hidden" id="recSec">
+      <div class="rec-h">
+        <div class="t">🍳 在线菜谱结果
+          <small>搜到好菜可一键加入菜单库</small>
+        </div>
+      </div>
+      <div class="rec-list" id="recList"></div>
+    </div>
   </section>
 
   <!-- ======================= 板块2：点菜 ======================= -->
@@ -473,8 +568,8 @@
       <div class="spicy" id="fSpicy"></div>
     </div>
     <div class="field">
-      <label>过敏原备注（如：含花生/海鲜）</label>
-      <input type="text" id="fAlg" maxlength="20" placeholder="无则留空">
+      <label>原料</label>
+      <input type="text" id="fAlg" maxlength="100" placeholder="如：五花肉、生抽、姜蒜，用、或；分隔">
     </div>
     <div class="field">
       <label>做法步骤 <b style="color:var(--sub);font-weight:400">（每条最多 500 字，可添加多条）</b></label>
@@ -482,6 +577,14 @@
       <button class="add-step" onclick="UI.addStep()">＋ 添加步骤</button>
     </div>
     <button class="save" onclick="UI.saveForm()">保 存</button>
+  </div>
+</div>
+
+<!-- 菜品详情弹窗 -->
+<div class="mask" id="dMask">
+  <div class="sheet">
+    <h3><span id="dTitle">菜品详情</span><button class="close" onclick="UI.closeDishDetail()">✕</button></h3>
+    <div id="dBody"></div>
   </div>
 </div>
 
@@ -510,12 +613,32 @@ const SPICY = ['不辣','微辣','中辣','重辣'];
 const MEALS = [
   { k:'早餐', ic:'🌅' }, { k:'午餐', ic:'☀️' }, { k:'晚餐', ic:'🌙' }, { k:'加餐', ic:'🍪' }
 ];
+/* 菜品背景装饰：按分类各配一组食物 emoji（无在线图时使用） */
+const DISH_EMOJIS={
+  '荤菜':['🍖','🍗','🥩','🍤','🦐','🐟','🍢','🥘'],
+  '素菜':['🥦','🥬','🌽','🍆','🥕','🍄','🥒','🥗'],
+  '汤品':['🍲','🥣','🫕','🍜','🍵'],
+  '主食':['🍚','🍜','🍞','🥟','🌮','🍛','🥠','🍙'],
+  '小吃':['🍡','🍰','🍩','🍪','🥧','🍮','🍭','🧁']
+};
+
+/* ------------------------- 灵感菜谱配置 ------------------------- */
+// 天行数据菜谱 API：https://www.tianapi.com 注册免费账号后，在「控制台-我的密钥」获取
+const RECIPE_API_KEY = '9871e8de7d220d19b58b119ed59fe03c';   // ← 填入你的天行数据 API key
+const RECIPE_API = 'https://apis.tianapi.com/caipu/index';
+
+/* ------------------------- 网络时间配置（校准设备时钟） ------------------------- */
+// 依次尝试这些接口拿网络当前时间；全部失败则回退设备时间
+const NET_TIME_APIS = [
+  'https://worldtimeapi.org/api/ip',
+  'https://timeapi.io/api/Time/current/zone?timeZone=Asia/Shanghai'
+];
 
 /* ------------------------- 2. Data：内存模型 ------------------------- */
 const Data = {
-  menu: Store.read(Store.K_MENU, []),        // [{id,name,cat,spicy,allergy,steps:[...]}]
+  menu: Store.read(Store.K_MENU, []),        // [{id,name,cat,spicy,ingredients,steps:[...]}]
   orders: Store.read(Store.K_ORD, []),       // [{date,time,meal,items:[{name,qty}]}]
-  draft: Store.read(Store.K_DRAFT, { meal:'午餐', items:[] }),  // {meal, items:[{id,qty}]}
+  draft: Store.read(Store.K_DRAFT, { meal:'午餐', items:[], manual:false }),  // {meal, items:[{id,qty}], manual:是否手动选择过时段}
   filterCat:'全部',                          // 菜单库分类筛选
   editingId:null,                            // 正在编辑的菜品 id
   _uid:0,
@@ -527,7 +650,24 @@ const Data = {
 
 /* ---------- 日期工具 ---------- */
 const Day = {
-  now(){ return new Date() },
+  _netOffset:0,        // 毫秒：网络时间 - 设备时间（未校准为 0）
+  now(){ return new Date(Date.now()+this._netOffset) },
+  // 异步获取网络当前时间用于校准设备时钟；失败返回 false（保持设备时间）
+  async fetchNetTime(){
+    for(const url of NET_TIME_APIS){
+      try{
+        const r=await fetch(url,{ cache:'no-store' });
+        if(!r.ok) continue;
+        const j=await r.json();
+        const iso = /worldtimeapi/.test(url) ? j.datetime : j.dateTime;
+        const t=Date.parse(iso);
+        if(isNaN(t)) continue;
+        this._netOffset=t-Date.now();
+        return true;
+      }catch(e){}
+    }
+    return false;
+  },
   d2s(d){ const t=new Date(d); return t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0') },
   md2t(s){ const p=s.split('-').map(Number); return new Date(p[0],p[1]-1,p[2]).getTime() },
   wk(s){ return '日一二三四五六'[new Date(s.replace(/-/g,'/')).getDay()] },  // 兼容 iOS 解析
@@ -569,10 +709,25 @@ const UI = {
     this.$('tabs').querySelectorAll('button').forEach(b=>b.classList.toggle('on', b.dataset.p===p));
     ['p-menu','p-order','p-hist'].forEach(id=>this.$(id).classList.toggle('show', id==='p-'+p));
     this.$('orderBar').style.display = p==='order' ? 'block' : 'none';
+    // 每次进入点菜页都按当前时间重新匹配时段（未手动选择时）
+    if(p==='order'){ this.renderMeal(); }
+    // 点击「菜单」：清空搜索与分类筛选，展示完整菜单
+    if(p==='menu'){
+      const kw=this.$('kw');
+      if(kw.value || Data.filterCat!=='全部'){
+        kw.value='';
+        Data.filterCat='全部';
+        this.renderChips();
+        this.renderDishes();
+        this.$('recSec').classList.add('hidden');
+      }
+    }
   },
   initTabs(){
-    this.$('tabs').querySelectorAll('button').forEach(b=>{ b.onclick=()=>this.goTab(b.dataset.p); });
-    this.$('orderBar').style.display='block';
+    const tabs=this.$('tabs').querySelectorAll('button');
+    tabs.forEach(b=>{ b.onclick=()=>this.goTab(b.dataset.p); });
+    const cur=[...tabs].find(b=>b.classList.contains('on'));
+    this.$('orderBar').style.display = cur && cur.dataset.p==='order' ? 'block' : 'none';
   },
 
   /* --- 3.3 菜单库：分类芯片 + 菜品卡片 --- */
@@ -582,7 +737,103 @@ const UI = {
       '<button class="'+(Data.filterCat===c?'on':'')+'" onclick="UI.setCat(\''+c+'\')">'+c+'</button>').join('');
   },
   setCat(c){ Data.filterCat=c; this.renderChips(); this.renderDishes(); },
-  refreshMenu(){ this.renderDishes(); },  // 搜索框 oninput 入口
+  refreshMenu(){ this.renderDishes(); this.$('recSec').classList.add('hidden'); },  // 输入时实时过滤本地，并隐藏过期在线结果
+
+  /* --- 灵感菜谱（天行数据菜谱 API） --- */
+  _recipes:[],
+  searchRecipe(){
+    // 与本地搜索融合展示：展开在线结果面板
+    this.$('recSec').classList.remove('hidden');
+    const kw=this.$('kw').value.trim();
+    const box=this.$('recList');
+    if(!kw){ box.innerHTML='<div class="rec-status">请输入要搜索的菜名</div>'; return; }
+    if(!RECIPE_API_KEY){ box.innerHTML='<div class="rec-status">还未配置 API Key<br>请打开文件源码，在顶部 <b>RECIPE_API_KEY</b> 填入天行数据密钥<br>（tianapi.com 注册免费获取）</div>'; return; }
+    box.innerHTML='<div class="rec-status">⏳ 正在搜索「'+esc(kw)+'」…</div>';
+    fetch(RECIPE_API+'?key='+encodeURIComponent(RECIPE_API_KEY)+'&word='+encodeURIComponent(kw)+'&num=10')
+      .then(r=>r.json()).then(res=>{
+        if(res.code!==200 || !res.result){ box.innerHTML='<div class="rec-status">查询失败：'+(res.msg||'未知错误')+'</div>'; return; }
+        const list=res.result.list||[];
+        this._recipes=list;
+        if(!list.length){ box.innerHTML='<div class="rec-status">没有找到「'+esc(kw)+'」的菜谱，换个关键词试试</div>'; return; }
+        box.innerHTML=list.map((it,i)=>
+          '<div class="rec-item" onclick="UI.toggleRecipe('+i+')" data-i="'+i+'">'+
+          '<div class="rh"><span class="nm">'+esc(it.cp_name)+'</span>'+
+          (it.type_name?'<span class="type">'+esc(it.type_name)+'</span>':'')+'</div>'+
+          '<div class="det">'+
+          (it.texing?'<div class="rec-det-h">😋 菜肴特性</div><div class="rl">'+esc(it.texing)+'</div>':'')+
+          (it.yuanliao?'<div class="rec-det-h">🥬 原料</div><div class="rl">'+esc(it.yuanliao)+'</div>':'')+
+          (it.tiaoliao?'<div class="rec-det-h">🧂 调料</div><div class="rl">'+esc(it.tiaoliao)+'</div>':'')+
+          (it.zuofa?'<div class="rec-det-h">👨‍🍳 做法步骤</div>'+this.splitSteps(it.zuofa).map(s=>
+            '<div class="step"><b>'+(s.n)+'</b><span>'+esc(s.t)+'</span></div>').join(''):'')+
+          (it.tishi?'<div class="rec-det-h">💡 小提示</div><div class="tip">'+esc(it.tishi)+'</div>':'')+
+          '<button class="rec-add" onclick="event.stopPropagation();UI.addRecipeToMenu('+i+')">＋ 加入菜单库</button>'+
+          '</div></div>').join('');
+      }).catch(()=>{ box.innerHTML='<div class="rec-status">网络请求失败，请检查网络后重试</div>'; });
+  },
+  // 在线菜谱 → 本地：自动归类 荤/素/汤/主食/小吃（综合类型、特性、菜名、原料判断）
+  mapCat(it){
+    const s=[it.type_name,it.texing,it.cp_name,it.yuanliao].filter(Boolean).join(' ');
+    if(/主食|米饭|炒饭|盖饭|拌饭|面条|炒面|汤面|拌面|粥|米线|馒头|包子|饺子|馄饨|饼|面包|饭团|意面|年糕/.test(s)) return '主食';
+    if(/汤|羹|炖汤|煲汤|例汤|浓汤/.test(s)) return '汤品';
+    if(/凉菜|凉拌|腌|泡菜|沙拉|甜品|甜点|点心|小吃|零食|糖水|饮品|果盘|蛋糕|布丁/.test(s)) return '小吃';
+    if(/肉|排骨|五花|里脊|猪|牛|羊|鸡|鸭|鹅|鱼|虾|蟹|贝|海鲜|鱿鱼|培根|火腿|腊肉|香肠|蛋|翅/.test(s)) return '荤菜';
+    if(/素|蔬|菜叶|青菜|时蔬|豆腐|豆干|腐竹|菌|菇|木耳|西兰花|番茄|土豆|茄子/.test(s)) return '素菜';
+    return '荤菜';
+  },
+  // 在线菜谱 → 本地：自动匹配辣度（结合菜名、特性、调料、提示判断）
+  mapSpicy(it){
+    const s=[it.cp_name,it.texing,it.tiaoliao,it.tishi].filter(Boolean).join(' ');
+    if(/重辣|超辣|特辣|变态辣|爆辣|麻辣/.test(s)) return '重辣';
+    if(/中辣|香辣|酸辣|川味/.test(s)) return '中辣';
+    if(/微辣|微麻/.test(s)) return '微辣';
+    if(/辣|辣椒|花椒|麻椒|藤椒|剁椒|泡椒|辣子/.test(s)) return '中辣';
+    return '不辣';
+  },
+  addRecipeToMenu(i){
+    const it=this._recipes[i]; if(!it) return;
+    if(Data.menu.some(d=>d.name===it.cp_name)){
+      this.toast('「'+it.cp_name+'」已在菜单库中'); return;
+    }
+    // 原料进原料字段，做法步骤进步骤字段
+    const ing=[];
+    if(it.yuanliao) ing.push(it.yuanliao);
+    if(it.tiaoliao) ing.push('调料：'+it.tiaoliao);
+    const steps=this.splitSteps(it.zuofa).map(s=>s.t);
+    const dish={
+      id: Data.newId(),
+      name: it.cp_name,
+      cat: this.mapCat(it),          // 自动匹配 荤/素/汤/主食/小吃
+      spicy: this.mapSpicy(it),      // 自动匹配辣度
+      ingredients: ing.join('；'),
+      steps: steps
+    };
+    if(typeof it.pic==='string' && it.pic) dish.img=it.pic;   // 菜谱配图作菜品背景
+    Data.menu.push(dish);
+    this.matchDishImage(dish);   // 无配图则自动从网络匹配对应菜品图片
+    Data.saveMenu();
+    this.renderDishes(); this.renderChips(); this.buildWheel(); this.renderPick();
+    this.toast('✅ 已加入菜单库：「'+it.cp_name+'」');
+  },
+  toggleRecipe(i){
+    const box=this.$('recList');
+    box.querySelectorAll('.rec-item').forEach((el,j)=>{ el.classList.toggle('on', j===i); });
+  },
+  splitSteps(txt){
+    const t=String(txt||'').trim();
+    if(!t) return [];
+    // 匹配 "1."、"1、"、"①"、"（1）"、"1）" 等开头
+    const m=t.match(/\d+[.、．。)）]/g);
+    if(m && m.length>1){
+      const parts=t.split(/\d+[.、．。)）]/).filter(s=>s.trim()).map(s=>s.replace(/^[;；:：\s]+/,'').trim());
+      return parts.map((s,i)=>({ n:i+1, t:s }));
+    }
+    // 单个步骤或无序号：整体返回
+    return [{ n:1, t:t }];
+  },
+  // 去掉做法步骤开头自带的序号（如 "1. "、"2、"），避免与界面自动序号重复
+  stripStepNo(s){
+    return String(s==null?'':s).replace(/^\s*\d+\s*[.、．。)）:：]\s*/,'');
+  },
   /* 辣度 → 小辣椒图案：不辣=无图案，微辣=1个，中辣=2个，重辣=3个 */
   spicyCount(sp){ const i=SPICY.indexOf(sp); return i>0 ? i : 0 },
   spicyText(sp){
@@ -590,26 +841,91 @@ const UI = {
     return chili+(chili?' ':'')+sp;
   },
   spicyTagHtml(sp){ return '<i class="t-sp">'+this.spicyText(sp)+'</i>' },
+  // 菜品背景装饰：有图片用图片（加载失败回退 emoji），否则按分类取一个稳定的食物 emoji
+  pickEmoji(d){
+    const pool=DISH_EMOJIS[d.cat]||DISH_EMOJIS['荤菜'];
+    const n=d.name||''; let h=0;
+    for(let i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0;
+    return pool[h%pool.length];
+  },
+  dishBgHtml(d){
+    if(d.img) return '<img class="dish-bg" src="'+esc(d.img)+'" alt="" loading="lazy" onerror="UI.dishBgErr(this,\''+d.id+'\')">';
+    return '<span class="dish-bg">'+this.pickEmoji(d)+'</span>';
+  },
+  // 背景图加载失败：原地回退成食物 emoji
+  dishBgErr(el, id){
+    const d=Data.menu.find(x=>x.id===id); if(!d) return;
+    const sp=document.createElement('span'); sp.className='dish-bg'; sp.textContent=this.pickEmoji(d);
+    el.replaceWith(sp);
+  },
+  // 图片匹配基础设施：JSONP 方式请求 360 图片，绕过跨域限制
+  _imgSeq:0, _imgDone:{}, _autoDone:0,
+  jsonp(url, cb){
+    const key='__imgcb'+(++this._imgSeq);
+    const el=document.createElement('script');
+    window[key]=(data)=>{ cb(data); delete window[key]; el.remove(); };
+    el.src=url.replace('%CB%',key);
+    el.onerror=()=>{ delete window[key]; el.remove(); cb(null); };
+    document.body.appendChild(el);
+  },
+  // 为单个菜品从网络匹配对应图片（360 图片搜索，取首条缩略图）
+  matchDishImage(d){
+    if(!d || d.img || this._imgDone[d.id]) return;
+    this._imgDone[d.id]=1;
+    const url='https://image.so.com/j?q='+encodeURIComponent(d.name)+'&pn=1&rn=1&src=srp&callback=%CB%';
+    this.jsonp(url,(data)=>{
+      if(data && data.list && data.list[0] && data.list[0].thumb){
+        d.img=data.list[0].thumb;
+        Data.saveMenu();
+        this.setDishBg(d.id, d.img);
+      }
+    });
+  },
+  // 将菜品卡片上的背景占位换成匹配到的图片
+  setDishBg(id, url){
+    const card=this.$('dishList').querySelector('.dish[data-id="'+id+'"]');
+    if(!card) return;
+    const old=card.querySelector('.dish-bg');
+    if(!old) return;
+    const im=document.createElement('img');
+    im.className='dish-bg'; im.src=url; im.alt=''; im.loading='lazy';
+    im.onerror=()=>this.dishBgErr(im,id);
+    old.replaceWith(im);
+  },
+  // 启动时批量：为所有无图菜品自动匹配（限量、错峰，避免触发反爬）
+  autoMatchImages(){
+    const cap=30 - this._autoDone;
+    if(cap<=0) return;
+    const need=Data.menu.filter(d=>!d.img && !this._imgDone[d.id]);
+    let i=0, done=0;
+    const next=()=>{
+      if(i>=need.length || done>=cap) return;
+      const d=need[i++];
+      this.matchDishImage(d);
+      done++; this._autoDone++;
+      setTimeout(next, 700);
+    };
+    next();
+  },
   renderDishes(){
     const kw=this.$('kw').value.trim().toLowerCase();
-    // 关键词匹配：菜名 / 做法步骤 / 过敏原
+    // 关键词匹配：菜名 / 做法步骤 / 原料
     const list=Data.menu.filter(d=>{
       if(Data.filterCat!=='全部' && d.cat!==Data.filterCat) return false;
       if(!kw) return true;
-      return (d.name+' '+(d.steps||[]).join(' ')+' '+d.allergy).toLowerCase().includes(kw);
+      return (d.name+' '+(d.steps||[]).join(' ')+' '+(d.ingredients||'')).toLowerCase().includes(kw);
     });
     this.$('dishList').innerHTML = list.length ? list.map(d=>{
       const tags = '<i class="t-cat">'+d.cat+'</i>' +
-        (d.spicy ? this.spicyTagHtml(d.spicy) : '') +
-        (d.allergy ? '<i class="t-al">⚠️ 忌口：'+d.allergy+'</i>' : '');
+        (d.spicy ? this.spicyTagHtml(d.spicy) : '');
+      const ing=(d.ingredients||'');
       const steps=(d.steps||[]);
       const stepsHtml = steps.length ? '<div class="steps">'+steps.map((s,i)=>
-        '<div class="step"><b>'+(i+1)+'.</b><span>'+esc(s)+'</span></div>').join('')+'</div>' : '';
-      return '<div class="dish" data-id="'+d.id+'"><div class="r1"><span class="nm">'+esc(d.name)+'</span>'+
-        '<div class="ops">'+
-        '<button class="edit" onclick="UI.openForm(\''+d.id+'\')">编辑</button>'+
-        '<button class="del" onclick="UI.delDish(\''+d.id+'\')">删除</button></div></div>'+
+        '<div class="step"><b>'+(i+1)+'.</b><span>'+esc(this.stripStepNo(s))+'</span></div>').join('')+'</div>' : '';
+      return '<div class="dish" data-id="'+d.id+'" onclick="UI.showDishDetail(\''+d.id+'\')">'+this.dishBgHtml(d)+
+        '<div class="r1"><span class="nm">'+esc(d.name)+'</span></div>'+
         '<div class="tags">'+tags+'</div>'+
+        (ing ? '<div class="ing">🥬 原料：'+esc(ing)+'</div>' : '')+
         stepsHtml+
         '</div>';
     }).join('') : '<div class="empty">😋 暂无匹配菜品<br>试试换关键词，或新增一个菜吧</div>';
@@ -621,6 +937,33 @@ const UI = {
     Data.saveMenu(); this.renderDishes(); this.renderCart(); this.buildWheel();
     this.toast('已删除「'+d.name+'」');
   },
+
+  /* --- 菜品详情弹窗：点击卡片展示完整信息 --- */
+  showDishDetail(id){
+    const d=Data.menu.find(x=>x.id===id); if(!d) return;
+    const tags = '<i class="t-cat">'+d.cat+'</i>' +
+      (d.spicy ? this.spicyTagHtml(d.spicy) : '');
+    const ing=d.ingredients||'';
+    const steps=d.steps||[];
+    const stepsHtml = steps.length ? steps.map((s,i)=>
+      '<div class="step"><b>'+(i+1)+'.</b><span>'+esc(this.stripStepNo(s))+'</span></div>').join('') : '';
+    const pic = d.img
+      ? '<img src="'+esc(d.img)+'" alt="" onerror="this.parentNode.removeChild(this)">'
+      : '<span class="d-emoji">'+this.pickEmoji(d)+'</span>';
+    this.$('dTitle').textContent=d.name;
+    this.$('dBody').innerHTML =
+      '<div class="d-pic">'+pic+'</div>'+
+      '<div class="d-tags">'+tags+'</div>'+
+      (ing ? '<div class="d-sec">🥬 原料</div><div class="d-ing">'+esc(ing)+'</div>' : '')+
+      (stepsHtml ? '<div class="d-sec">👨‍🍳 做法步骤</div>'+stepsHtml : '')+
+      '<div class="d-ops">'+
+      '<button class="d-edit" onclick="UI.closeDishDetail();UI.openForm(\''+d.id+'\')">✏️ 编辑</button>'+
+      '<button class="d-del" onclick="UI.delDishDetail(\''+d.id+'\')">🗑 删除</button>'+
+      '</div>';
+    this.$('dMask').classList.add('show');
+  },
+  closeDishDetail(){ this.$('dMask').classList.remove('show'); },
+  delDishDetail(id){ this.closeDishDetail(); this.delDish(id); },
 
   /* --- 3.31 菜单库导出 / 导入（数据迁移） --- */
   exportMenu(){
@@ -652,7 +995,8 @@ const UI = {
           name: String(d.name||'未命名'),
           cat: MENU_CATS.includes(d.cat)?d.cat:(MENU_CATS[0]),
           spicy: SPICY.includes(d.spicy)?d.spicy:SPICY[0],
-          allergy: String(d.allergy||''),
+          ingredients: String(d.ingredients||d.allergy||''),
+          img: typeof d.img==='string' && d.img ? d.img : '',
           steps: (Array.isArray(d.steps)&&d.steps.length)?d.steps.map(String):[String(d.note||'')].filter(Boolean)
         }));
         Data.saveMenu();
@@ -674,7 +1018,7 @@ const UI = {
     const placeholder = d ? '' : '<option value="">请选择分类</option>';
     this.$('fCat').innerHTML = placeholder + MENU_CATS.map(c=>'<option>'+c+'</option>').join('');
     this.$('fCat').value    = d ? d.cat : '';
-    this.$('fAlg').value    = d ? (d.allergy||'') : '';
+    this.$('fAlg').value    = d ? (d.ingredients||'') : '';
     // 做法步骤：编辑时回填，新增时给一条空步骤
     this.$('fSteps').innerHTML='';
     const steps = d && (d.steps||[]).length ? d.steps : [''];
@@ -723,14 +1067,14 @@ const UI = {
     if(!name){ this.toast('请填写菜名'); return; }
     if(!cat){ this.toast('请选择分类'); return; }
     const spicy=this.$('fSpicy').querySelector('.on')?.dataset.s || '不辣';
-    const allergy=this.$('fAlg').value.trim();
+    const ingredients=this.$('fAlg').value.trim();
     const steps=this.collectSteps();
     if(Data.editingId){
       const d=Data.menu.find(x=>x.id===Data.editingId);
-      Object.assign(d,{name,cat,spicy,allergy,steps});
+      Object.assign(d,{name,cat,spicy,ingredients,steps});
       this.toast('已保存修改');
     }else{
-      Data.menu.push({ id:Data.newId(), name, cat, spicy, allergy, steps });
+      Data.menu.push({ id:Data.newId(), name, cat, spicy, ingredients, steps });
       this.toast('已添加「'+name+'」');
     }
     Data.saveMenu();
@@ -741,10 +1085,13 @@ const UI = {
   /* --- 3.5 点菜：时段 + 勾选 + 汇总 --- */
   renderMeal(){
     let m=Data.draft.meal;
-    // 草稿不是今天的（或从未选过）：按当前网络时间建议时段
-    if(Data.draft.dte!==Day.today() || !MEALS.some(x=>x.k===m)){
-      m=Day.suggestMeal();
-      Data.draft.dte=Day.today(); Data.draft.meal=m; Data.saveDraft();
+    const today=Day.today();
+    // 手动选过且没过期：保留用户选择；否则按当前（网络校准后）时间自动匹配
+    const stale = Data.draft.dte!==today || !MEALS.some(x=>x.k===m);
+    if(stale || !Data.draft.manual){
+      const suggested=Day.suggestMeal();
+      if(suggested!==m){ m=suggested; Data.draft.items=[]; this.renderPick(); this.renderCart(); }
+      Data.draft.dte=today; Data.draft.meal=m; Data.draft.manual=false; Data.saveDraft();
     }
     this.$('mealSel').innerHTML=MEALS.map(x=>
       '<button class="'+(m===x.k?'on':'')+'" onclick="UI.pickMeal(\''+x.k+'\')"><span class="ic">'+x.ic+'</span>'+x.k+'</button>').join('');
@@ -752,7 +1099,8 @@ const UI = {
   pickMeal(k){
     // 切换用餐时段时重置已勾选菜品
     if(Data.draft.meal!==k) Data.draft.items=[];
-    Data.draft.meal=k; Data.draft.dte=Day.today(); Data.saveDraft(); this.renderMeal(); this.renderPick(); this.renderCart();
+    Data.draft.meal=k; Data.draft.dte=Day.today(); Data.draft.manual=true; Data.saveDraft();
+    this.renderMeal(); this.renderPick(); this.renderCart();
   },
   renderPick(){
     const checked=Data.draft.items.map(i=>i.id);
@@ -764,7 +1112,7 @@ const UI = {
       const q=it?it.qty:1;
       return '<div class="row'+(on?' on':'')+'" data-id="'+d.id+'" onclick="UI.toggleItem(\''+d.id+'\')">'+
         '<div class="cb">✓</div><div class="nm">'+esc(d.name)+
-        '<small>'+(d.spicy?esc(this.spicyText(d.spicy)):'')+(d.allergy?' · ⚠️'+esc(d.allergy):'')+'</small></div>'+
+        '<small>'+(d.spicy?esc(this.spicyText(d.spicy)):'')+'</small></div>'+
         '<div class="qty">'+
         '<button onclick="event.stopPropagation();UI.chgQty(\''+d.id+'\',-1)">−</button><b>'+q+'</b>'+
         '<button onclick="event.stopPropagation();UI.chgQty(\''+d.id+'\',1)">＋</button></div></div>';
@@ -1019,10 +1367,6 @@ const UI = {
     const out=this.$('wheelOut');
     out.classList.add('show');
     out.querySelector('b').textContent='「'+d.name+'」';
-    // 忌口提示
-    const al=this.$('wheelAlert');
-    if(d.allergy){ al.textContent='⚠️ 注意：'+d.allergy; al.style.color='var(--red)'; al.style.display='block'; }
-    else{ al.textContent=''; al.style.display='none'; }
   },
   addWheelToCart(){
     const d=this.wheelDish; if(!d) return;
@@ -1052,11 +1396,12 @@ const UI = {
   /* --- 3.9 启动 --- */
   init(){
     cleanOrders();                    // 数据清理：删除超 3 天旧记录
-    // 兼容旧数据：旧版用字符串 note，迁移为步骤数组 steps
+    // 兼容旧数据：旧版用字符串 note，迁移为步骤数组 steps；过敏原备注迁移为原料
     let migrated=false;
     Data.menu.forEach(d=>{
       if(!Array.isArray(d.steps) && d.note){ d.steps=[String(d.note)]; delete d.note; migrated=true; }
       if(!Array.isArray(d.steps)) d.steps=[];
+      if(!d.ingredients && d.allergy){ d.ingredients=d.allergy; delete d.allergy; migrated=true; }
     });
     if(migrated) Data.saveMenu();
     this.initTabs();
@@ -1069,8 +1414,13 @@ const UI = {
     this.renderRecords();
     this.renderRank();
     this.renderToday();
+    // 为无图菜品自动从网络匹配对应图片作背景
+    this.autoMatchImages();
+    // 拉取网络时间校准设备时钟后，重新匹配用餐时段与今日文案
+    Day.fetchNetTime().then(()=>{ this.renderMeal(); this.renderToday(); });
     // 点击遮罩空白处关闭表单
     this.$('mask').addEventListener('click',e=>{ if(e.target===this.$('mask')) this.closeForm(); });
+    this.$('dMask').addEventListener('click',e=>{ if(e.target===this.$('dMask')) this.closeDishDetail(); });
   }
 };
 
